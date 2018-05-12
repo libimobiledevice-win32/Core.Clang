@@ -1423,5 +1423,36 @@ namespace Core.Clang
             CXType T,
             IntPtr visitor,
             CXClientDataImpl* client_data);
+
+
+        [DllImport(dllName)]
+        public static extern CXComment clang_Cursor_getParsedComment(
+            CXCursor cursor);
+
+        [DllImport(dllName)]
+        public static extern CXCommentKind clang_Comment_getKind(
+            CXComment comment);
+
+        [DllImport(dllName)]
+        public static extern uint clang_Comment_getNumChildren(
+            CXComment comment);
+
+        [DllImport(dllName)]
+        public static extern CXComment clang_Comment_getChild(
+            CXComment comment,
+            uint childIndex);
+
+        [DllImport(dllName)]
+        public static extern CXString clang_TextComment_getText(
+            CXComment comment);
+
+        [DllImport(dllName)]
+        public static extern CXString clang_ParamCommandComment_getParamName(
+            CXComment comment);
+
+        [DllImport(dllName)]
+        public static extern CXString clang_BlockCommandComment_getCommandName(
+            CXComment comment);
+
     }
 }
