@@ -6,6 +6,7 @@ mono: none
 dotnet: 2.1.4
 
 before_install:  
+  - wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
   - sudo apt-add-repository "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main"
   - sudo apt-get update -qq
 
