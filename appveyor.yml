@@ -7,5 +7,8 @@ build_script:
 - dotnet build Core.Clang\Core.Clang.csproj -c Release
 - dotnet pack Core.Clang\Core.Clang.csproj -c Release
 
+on_success:
+- dotnet nuget push Core.Clang\bin\Release\Core.Clang*.nupkg --api-key %NUGET_API_KEY% --source %NUGET_SOURCE%
+
 artifacts:
   - path: Core.Clang\bin\Release\Core.Clang*.nupkg
