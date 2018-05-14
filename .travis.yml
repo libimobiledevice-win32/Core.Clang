@@ -1,0 +1,19 @@
+dist: trusty
+sudo: required
+
+language: csharp
+mono: none
+dotnet: 2.1.4
+
+before_install:  
+  - sudo apt-add-repository "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main"
+  - sudo apt-get update -qq
+
+install:
+  - sudo apt-get install -y libclang-5.0-dev
+
+script:
+  - dotnet restore .
+  - dotnet run --project Playground/Playground.csproj
+  - dotnet build Core.Clang/Core.Clang.csproj -c Release
+  - dotnet pack Core.Clang/Core.Clang.csproj -c Release
