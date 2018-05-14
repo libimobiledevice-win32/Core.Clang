@@ -1,4 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/AArnott/Nerdbank.GitVersioning/master/src/NerdBank.GitVersioning/version.schema.json",
-  "version": "5.1-beta"
+  "version": "5.1-beta",
+  "publicReleaseRefSpec": [
+    "^refs/heads/master$", // we release out of master
+    "^refs/heads/fork$", // we release out of our fork
+  ],
 }
