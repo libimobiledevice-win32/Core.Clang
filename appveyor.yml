@@ -1,0 +1,11 @@
+install:
+- choco install -y llvm
+
+build_script:
+- dotnet restore .
+- dotnet run --project Playground/Playground.csproj
+- dotnet build Core.Clang\Core.Clang.csproj -c Release
+- dotnet pack Core.Clang\Core.Clang.csproj -c Release
+
+artifacts:
+  - path: Core.Clang\bin\Release\Core.Clang*.nupkg
