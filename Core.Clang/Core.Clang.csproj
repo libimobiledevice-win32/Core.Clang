@@ -4,15 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Platforms>AnyCPU;x64</Platforms>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>5.0.0-alpha1</Version>
     <Authors>Gordon Ou</Authors>
     <Company />
     <Description>[DllImport("libclang")]</Description>
     <Copyright>OU Qihao</Copyright>
     <PackageLicenseUrl>https://github.com/GordenOu/Core.Clang/blob/master/License.txt</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/GordenOu/Core.Clang</PackageProjectUrl>
-    <AssemblyVersion>5.0.0.0</AssemblyVersion>
-    <FileVersion>5.0.0.0</FileVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>Core Clang LibClang C C++ CodeAnalysis DllImport Native Interop</PackageTags>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -28,6 +25,8 @@
 
   <ItemGroup>
     <PackageReference Include="Core.Extensions" Version="0.5.0-alpha2" />
+    <PackageReference Include="Nerdbank.GitVersioning" Version="2.1.23">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
-
 </Project>
